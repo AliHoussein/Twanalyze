@@ -1,13 +1,7 @@
 require 'rubygems'
 require 'twitter'
+require 'secret.rb'
 require 'pp'
-
-Twitter.configure do |config|
-  config.consumer_key = 'uwAeOh98aL4QjDjky1EA'
-  config.consumer_secret = 'R4ZRG6obcfCx0zPxcSNWDp6fOyrvKbABE18yrym65M'
-  config.oauth_token = '3153611-vFoPJG3alSPqMxTjNLiUNOKQuokvtO0ZB6dZJ3XyrL'
-  config.oauth_token_secret = '8q2NNtXhzIHxuRpPpc0qDc3LN7Tp2dRO5wX1pnuNk'
-end
 
 data = Twitter.user_timeline("sylvainkalache")
 
@@ -27,7 +21,7 @@ data.each do |tweet|
     if !(common_word.include?(word))
       counter[word] += 1
     end
-    
+
   end
 end
 
